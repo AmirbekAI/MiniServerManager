@@ -1,6 +1,6 @@
 # Minimal Java Web Server - Understanding Tomcat Internals
 
-This project demonstrates how servlet containers like Tomcat work under the hood.
+If you have ever worked with frameworks like Spring Boot and thought that they work like magic, then this project is for you. It demonstrates how servlet containers like Tomcat work under the hood. It's a simplified and a working version of a servlet container.
 
 ## What You'll Learn
 
