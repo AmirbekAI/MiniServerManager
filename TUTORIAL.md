@@ -1,12 +1,12 @@
 # The Journey of an HTTP Request: A Beginner's Guide
 
-## 🚀 The Complete Story: From Browser to Response
+##  The Complete Story: From Browser to Response
 
 Let me walk you through **exactly** what happens when you type `http://localhost:8080/hello?name=Alice` in your browser and hit Enter. We'll follow the request step-by-step through our code!
 
 ---
 
-## Chapter 1: The Journey Begins 🌐
+## Chapter 1: The Journey Begins 
 
 ### Step 1: You Hit Enter in Your Browser
 
@@ -33,7 +33,7 @@ That's it! Just plain text sent over the network. No magic!
 
 ---
 
-## Chapter 2: The Server Wakes Up 🖥️
+## Chapter 2: The Server Wakes Up 
 
 ### Step 2: HttpServer Accepts the Connection
 
@@ -58,7 +58,7 @@ Socket clientSocket = serverSocket.accept();          // BLOCKS here waiting...
 
 ---
 
-## Chapter 3: Parsing the Request 📝
+## Chapter 3: Parsing the Request 
 
 ### Step 3: HttpRequest Parses Raw HTTP
 
@@ -123,7 +123,7 @@ while ((line = reader.readLine()) != null && !line.isEmpty()) {
 
 ---
 
-## Chapter 4: The Container Takes Over 🎯
+## Chapter 4: The Container Takes Over 
 
 ### Step 4: ServletContainer.handleRequest()
 
@@ -162,7 +162,7 @@ servletMappings.get("/hello")  // Returns HelloServlet
 
 ---
 
-## Chapter 5: Building the Filter Chain 🔗
+## Chapter 5: Building the Filter Chain 
 
 ### Step 5: The Magic of Filter Chains
 
@@ -252,7 +252,7 @@ FilterChain chain = new FilterChain() {
 
 ---
 
-## Chapter 6: Filters Execute 🛡️
+## Chapter 6: Filters Execute 
 
 ### Step 6a: LoggingFilter Runs (BEFORE)
 
@@ -309,7 +309,7 @@ public void doFilter(HttpRequest request, HttpResponse response, FilterChain cha
 
 ---
 
-## Chapter 7: The Servlet Executes 🎨
+## Chapter 7: The Servlet Executes 
 
 ### Step 7: HelloServlet.service()
 
@@ -350,7 +350,7 @@ public void service(HttpRequest request, HttpResponse response) {
 
 ---
 
-## Chapter 8: Filters Execute (AFTER) 🔙
+## Chapter 8: Filters Execute (AFTER) 
 
 ### Step 8a: AuthFilter Completes
 
@@ -392,7 +392,7 @@ public void doFilter(...) {
 
 ---
 
-## Chapter 9: Building the HTTP Response 📤
+## Chapter 9: Building the HTTP Response 
 
 ### Step 9: HttpResponse.send()
 
@@ -449,7 +449,7 @@ Server: MinimalJavaServer/1.0
 
 ---
 
-## Chapter 10: Browser Receives Response 🎉
+## Chapter 10: Browser Receives Response 
 
 ### Step 10: Your Browser Displays the Page
 
@@ -512,7 +512,7 @@ Here's the entire journey in one diagram:
 12. Browser
     ↓ (receives and displays HTML)
     
-13. YOU SEE: "Hello, Alice!" 🎉
+13. YOU SEE: "Hello, Alice!" 
 ```
 
 ---
@@ -523,10 +523,10 @@ Here's the entire journey in one diagram:
 
 Without filter chains, you'd have to modify every servlet to add logging, authentication, etc. With filter chains:
 
-- ✅ **Separation of concerns:** Logging logic separate from business logic
-- ✅ **Reusability:** One AuthFilter protects all servlets
-- ✅ **Order matters:** Logging → Auth → Servlet makes sense
-- ✅ **Pre and post processing:** Filters can run code before AND after servlets
+- **Separation of concerns:** Logging logic separate from business logic
+- **Reusability:** One AuthFilter protects all servlets
+- **Order matters:** Logging → Auth → Servlet makes sense
+- **Pre and post processing:** Filters can run code before AND after servlets
 
 ### 2. **The Magic of `chain.doFilter()`**
 
@@ -580,7 +580,7 @@ No magic! Just strings over TCP sockets.
 
 ---
 
-## 🧪 Try It Yourself!
+## Try It Yourself!
 
 ### Experiment 1: See the Filter Chain in Action
 
@@ -633,23 +633,12 @@ public void doFilter(...) {
 
 ---
 
-## 🎓 What You Learned
-
-You now understand:
-
-1. ✅ How HTTP requests are parsed from raw text
-2. ✅ How servlet containers map URLs to servlets
-3. ✅ How the filter chain pattern works
-4. ✅ How filters can do pre/post processing
-5. ✅ How filters can block requests
-6. ✅ How HTTP responses are built and sent
-7. ✅ Why Tomcat is structured the way it is!
 
 **This is exactly how Tomcat, Jetty, and other servlet containers work under the hood!** The real implementations have more features (thread pools, connection pooling, advanced URL mapping), but the core concepts are identical.
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 Want to dive deeper? Try adding:
 
